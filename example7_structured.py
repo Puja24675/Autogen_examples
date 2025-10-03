@@ -24,11 +24,11 @@ class MovieReview(BaseModel):
 async def main()->None:
     # Gemini 2.5 is OpenAi compatible
     model_client = OpenAIChatCompletionClient(
-        model="gemini-2.5-flash",
+        model = "gemini-2.5-flash",
         # Gemini 2.5 is not in default model list
-        model_info=ModelInfo(vision=True, function_calling=True, 
+        model_info = ModelInfo(vision=True, function_calling=True, 
                              json_output=True,family="unknown", structured_output=True),
-        api_key=os.getenv("GOOGLE_API_KEY"))
+        api_key = os.getenv("GOOGLE_API_KEY"))
 
     movie_review_agent = AssistantAgent(
         name = "Movie_reviewer",
